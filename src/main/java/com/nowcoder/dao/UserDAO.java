@@ -2,11 +2,13 @@ package com.nowcoder.dao;
 
 import com.nowcoder.model.User;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by nowcoder on 2016/7/2.
  */
 @Mapper
+@Repository
 public interface UserDAO {
     String TABLE_NAME = "user";
     String INSET_FIELDS = " name, password, salt, head_url ";

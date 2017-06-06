@@ -2,6 +2,7 @@ package com.nowcoder.dao;
 
 import com.nowcoder.model.Comment;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ import java.util.List;
  * Created by nowcoder on 2016/7/9.
  */
 @Mapper
+@Repository
 public interface CommentDAO {
     String TABLE_NAME = " comment ";
     String INSERT_FIELDS = " user_id, content, created_date, entity_id, entity_type, status ";

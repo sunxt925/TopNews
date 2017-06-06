@@ -1,5 +1,7 @@
 package com.nowcoder.service;
 
+import com.nowcoder.dao.NewsDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -7,7 +9,15 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ToutiaoService {
+
+    @Autowired
+    NewsDAO newsDAO;
+
     public String say() {
         return "This is from ToutiaoService";
+    }
+
+    public String countNews() {
+        return newsDAO.countNews();
     }
 }

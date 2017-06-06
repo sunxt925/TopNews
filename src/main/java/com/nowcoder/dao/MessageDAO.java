@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * Created by nowcoder on 2016/7/9.
  */
 @Mapper
+@Repository
 public interface MessageDAO {
     String TABLE_NAME = " message ";
     String INSERT_FIELDS = " from_id, to_id, content, has_read, conversation_id, created_date ";

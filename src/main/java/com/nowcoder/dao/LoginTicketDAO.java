@@ -3,11 +3,13 @@ package com.nowcoder.dao;
 import com.nowcoder.model.LoginTicket;
 import com.nowcoder.model.User;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by nowcoder on 2016/7/2.
  */
 @Mapper
+@Repository
 public interface LoginTicketDAO {
     String TABLE_NAME = "login_ticket";
     String INSERT_FIELDS = " user_id, expired, status, ticket ";

@@ -23,16 +23,24 @@ import java.util.*;
 /**
  * Created by nowcoder on 2016/6/26.
  */
-//@Controller
+@Controller
 public class IndexController {
     private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
     @Autowired
     private ToutiaoService toutiaoService;
 
-    @RequestMapping(path = {"/", "/index"}, method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = {"/count"})
+    @ResponseBody
+    public String countNews(){
+        System.out.println("123");
+        return toutiaoService.countNews();
+    }
+
+    @RequestMapping(path = {"/index2"}, method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public String index(HttpSession session) {
+        System.out.println("index xiaoteng");
         logger.info("Visit Index");
         return "Hello NowCoder," + session.getAttribute("msg")
                 + "<br> Say:" + toutiaoService.say();
